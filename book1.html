@@ -706,7 +706,7 @@ function story(spec) {
         a.o.visible = s.v; if (!s.v) continue;
         const pop = s.pop < .3 ? Math.max(.01, s.pop / .3) * (1 + .3 * Math.sin(s.pop / .3 * Math.PI)) : 1, sc = s.s * f.sc * pop;
         a.o.position.set(s.x, s.y + f.dy, s.z);
-        if (a.k === 'e') { a.o.scale.set(a.sz * sc, a.sz * sc, 1); a.o.material.rotation = f.ry; }
+        if (a.k === 'e') { a.o.scale.set(a.sz * sc, a.sz * sc, 1); a.o.material.rotation = f.ry + f.rz; }
         else { a.o.rotation.set(s.rx, s.ry + f.ry, s.rz + f.rz); a.o.scale.set(sc, sc * s.sy, sc); }
         if (a.k === 'b') a.o.children[0].scale.y = 1 + .025 * Math.sin(now * 2.4 + i);
         a.o.userData.upd?.(s.val);
